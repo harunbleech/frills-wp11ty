@@ -2,7 +2,7 @@
 
 var C = {}; //module.exports = Core;;"use strict";
 
-var _isMobile = !!navigator.userAgent.match(/iPhone|iPad|iPod/i) || navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/Opera Mini/i) || navigator.userAgent.match(/IEMobile/i);
+var _isMobile = !!navigator.userAgent.match(/iPhone|iPad|iPod/i) || !!navigator.userAgent.match(/Android/i) || !!navigator.userAgent.match(/Opera Mini/i) || !!navigator.userAgent.match(/IEMobile/i);
 
 var _isSafari = navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1;
 
@@ -16,7 +16,7 @@ var Basics = {
   hasCookies: true,
   isPortrait: false,
   isMobile: _isMobile,
-  isSmartphone: _isMobile && window.innerWidth <= 600,
+  isSmartphone: _isMobile && window.screen.width <= 600,
   isTouch: 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0,
   isSafari: _isSafari,
   cookiesAccepted: false,
@@ -48,8 +48,7 @@ if (!Basics.isTouch) {
   Basics.mouseOut = "touchend";
 }
 
-if (Basics.isMobile) document.body.classList.add("__mobile");
-console.log("Basics.isMobile " + Basics.isMobile);;"use strict";
+if (Basics.isMobile) document.body.classList.add("__mobile");;"use strict";
 
 var Colors = {
   WHITE: 0xFFFFFF,
@@ -141,7 +140,6 @@ var Metrics = {
 
     var __first = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
 
-    console.log("update");
     this.WIDTH = window.innerWidth;
     this.HEIGHT = window.innerHeight;
     var VH = window.innerHeight * 0.01;
@@ -2024,10 +2022,9 @@ var Scroll = {
     var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     this.axis = __axis;
     this._anchors = [];
-    console.log("MAINDI");
     options = {
-      container: options.container || document.getElementById('Main'),
-      element: options.element || document.getElementById('Main'),
+      container: options.container || document.body,
+      element: options.element || document.body,
       axis: __axis || "Y",
       smooth: options.smooth || false,
       easing: options.easing || 0.08,
@@ -2820,7 +2817,7 @@ var VScroll = /*#__PURE__*/function () {
     this.scroller = new virtualScroll({
       mouseMultiplier: navigator.platform.indexOf('Win') > -1 ? 1 : 0.4,
       firefoxMultiplier: 50,
-      touchMultiplier: 2,
+      touchMultiplier: 3,
       passive: true
     });
     this.options = {
@@ -2836,8 +2833,7 @@ var VScroll = /*#__PURE__*/function () {
     };
 
     this._call = function (e) {
-      console.log(e);
-
+      //   console.log(e);
       _this._check(e);
     };
 
@@ -2873,13 +2869,10 @@ var VScroll = /*#__PURE__*/function () {
       return this._enabled;
     },
     set: function set(__isEnabled) {
-      console.log("enabledWheel ", __isEnabled);
-
       if (this._isWheelEnabled !== __isEnabled) {
         this._isWheelEnabled = __isEnabled;
 
         if (this._isWheelEnabled) {
-          console.log("PUTA MIERDA 2");
           this.scroller.on(this._call);
         } else {
           this.scroller.off(this._call);
