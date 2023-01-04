@@ -1,7 +1,7 @@
 const _isMobile = !!navigator.userAgent.match(/iPhone|iPad|iPod/i) ||
-  navigator.userAgent.match(/Android/i) ||
-  navigator.userAgent.match(/Opera Mini/i) ||
-  navigator.userAgent.match(/IEMobile/i);
+  !!navigator.userAgent.match(/Android/i) ||
+  !!navigator.userAgent.match(/Opera Mini/i) ||
+  !!navigator.userAgent.match(/IEMobile/i);
 
 const _isSafari = navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1;
 
@@ -16,7 +16,7 @@ var Basics = {
   isPortrait: false,
 
   isMobile: _isMobile,
-  isSmartphone: _isMobile && window.innerWidth <= 600,
+  isSmartphone: _isMobile && window.screen.width <= 600,
   isTouch: ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0),
   isSafari: _isSafari,
 
@@ -52,4 +52,3 @@ if (!Basics.isTouch) {
 }
 
 if (Basics.isMobile) document.body.classList.add("__mobile");
-console.log("Basics.isMobile " + Basics.isMobile)
