@@ -82,7 +82,7 @@ class VScroll {
     this.scroller = new virtualScroll({
       mouseMultiplier: navigator.platform.indexOf('Win') > -1 ? 1 : 0.4,
       firefoxMultiplier: 50,
-      touchMultiplier: 2,
+      touchMultiplier: 3,
       passive: true
     });
 
@@ -99,7 +99,7 @@ class VScroll {
     };
 
     this._call = (e) => {
-      console.log(e);
+    //   console.log(e);
       this._check(e);
     };
 
