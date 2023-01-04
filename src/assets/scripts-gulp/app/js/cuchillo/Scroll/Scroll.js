@@ -28,11 +28,9 @@ const Scroll = {
     this.axis = __axis;
     this._anchors = [];
 
-    console.log("MAINDI")
-    
     options = {
-      container: options.container || document.getElementById('Main'),
-      element: options.element || document.getElementById('Main'),
+      container: options.container || document.body,
+      element: options.element || document.body,
       axis: __axis || "Y",
       smooth: options.smooth || false,
       easing: options.easing || 0.08,
