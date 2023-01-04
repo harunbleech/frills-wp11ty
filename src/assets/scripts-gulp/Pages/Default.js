@@ -14,7 +14,7 @@ class Default {
 
   //SHOW
   init() {
-    Scroll.init(Scroll.AXIS_Y, {smooth:!Basics.isSmartphone, multiplicator:1, hasSlowly:true});
+    Scroll.init(Scroll.AXIS_Y, {smooth:true, multiplicator:1, hasSlowly:true});
     Scroll.setScrollbar(Main.scrollbar);
     Scroll.addAll();
 
@@ -67,7 +67,7 @@ class Default {
         if(file)  window.location.href = file;
       }
     }
- 
+
     if(Basics.isDebug) {
       setTimeout(()=>{
         Scroll.resize();
