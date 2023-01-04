@@ -76,7 +76,11 @@ class ScrollItem__Image3D extends VScroll_Item {
 
   resize(__w,__h) {
     this._titleP0 = 0;
-    this._image3D.resize();
+
+    if(!Basics.isSmartphone) {
+        this._image3D.resize();
+    }
+
     //this._titleP1 = -this._title.offsetWidth - Metrics.WIDTH;
     super.resize(__w, __h)
   }
