@@ -19,8 +19,6 @@ var Main = {
 
     LoaderController.add(new MediaLoader());
 
-    console.log("MIERDA2")
-
     Preloader.show(()=> {
       let nLoads = 0;
       const next = () => {

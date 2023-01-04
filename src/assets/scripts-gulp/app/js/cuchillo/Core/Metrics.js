@@ -29,8 +29,6 @@ var Metrics = {
 
   update: function(__first = false){
 
-    console.log("update")
-
     this.WIDTH = window.innerWidth;
     this.HEIGHT = window.innerHeight;
 

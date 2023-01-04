@@ -40,13 +40,10 @@ class VScroll {
   get enabledWheel() { return this._enabled; };
   set enabledWheel(__isEnabled) {
 
-    console.log("enabledWheel ", __isEnabled);
-
     if(this._isWheelEnabled !== __isEnabled) {
       this._isWheelEnabled = __isEnabled;
 
       if(this._isWheelEnabled) {
-        console.log("PUTA MIERDA 2");
         this.scroller.on(this._call);
       } else {
         this.scroller.off(this._call);
