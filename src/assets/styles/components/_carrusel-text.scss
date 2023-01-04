@@ -1,0 +1,31 @@
+.carrusel-text {
+  --actual:-1;
+  --gap:.1em;
+  --font-size:10px;
+  --offset: 0px;
+  --height: calc(var(--font-size) + var(--offset));
+  --time:1s;
+
+  position: relative;
+  width: 100%;
+  height: var(--height);
+
+  clip-path: polygon(0 calc(var(--gap) * -1), 100% calc(var(--gap) * -1), 100% 100%, 0 100%);
+}
+
+.carrusel-text__holder {
+  --position: calc(var(--height) * var(--actual) * -1);
+
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  transform: translate3D(0,var(--position),0);
+  transition: transform var(--time) var(--ease-in-out-circ);
+
+  > span {
+    height: var(--height);
+    //padding: var(--offset) 0 0;
+    display: block;
+  }
+}

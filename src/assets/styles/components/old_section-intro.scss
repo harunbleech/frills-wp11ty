@@ -1,0 +1,26 @@
+
+.section-intro {
+  margin: 0 0 var(--padding-xl) 0;
+  padding: 30vh var(--padding-m) 0;
+  color: var(--white);
+}
+
+.section-intro .title {
+  position: relative;
+  text-align: center;
+  margin: 0;
+  @include font-titular-xlarge();
+
+  span {
+    display: block;
+  }
+
+  .deco {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    color: var(--frills-orange);
+    z-index: -1;
+  }
+}

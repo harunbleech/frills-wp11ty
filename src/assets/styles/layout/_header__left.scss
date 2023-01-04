@@ -1,0 +1,128 @@
+.header__left {
+  display: flex;
+  pointer-events: all;
+ // display: none;
+}
+
+.header__btn-sidemenu {
+  position: relative;
+  background: currentColor;
+  border: 0;
+  width: var(--header-button-size);
+  height: var(--header-button-size);
+  overflow: hidden;
+
+  .bg {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: var(--white);
+    transition: opacity .4s var(--ease-in-quad);
+  }
+
+  svg {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    fill: var(--color-aux);
+    transform-origin: center center;
+    transition: transform 1s var(--ease-in-out-quad);
+  }
+
+  &.__close {
+    svg {
+      transform: rotate(135deg);
+      transition: transform 1s var(--ease-in-out-quad);
+      transform-origin: center center;
+    }
+  }
+
+  &:hover {
+    .bg {
+      opacity: 1;
+      transition: opacity .4s var(--ease-out-quad);
+    }
+    &.__close {
+      .bg {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.header__scrollbar {
+  width: var(--sidemenu-width);
+  height: var(--header-button-size);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-left: var(--padding-s);
+
+  .time {
+    flex: 0 0 20px;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-small);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    margin-right: 1em;
+  }
+
+  .holder-bars {
+    position: relative;
+    flex: 1 0 20px;
+    height: rem(4px);
+    overflow: hidden;
+
+    .track,
+    .thumb {
+      position: absolute;
+      top: -10%;
+      left: 0;
+      width: 100%;
+      height: 120%;
+    }
+
+    .track {
+      background: var(--color-secondary);
+    }
+
+    .thumb {
+      background: currentColor;
+      transform-origin: 0 0;
+      transform: scale3d(0,1,1);
+    }
+  }
+}
+
+.header__scrollbar .carrusel-text  {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--font-size-base);
+  line-height: 1;
+  text-transform: uppercase;
+
+  --actual: var(--section-actual);
+  --offset: 0em;
+  --font-size: var(--font-size-base);
+  --time:.6s;
+  color: var(--white);
+
+  margin-top: -.1em;
+  margin-bottom: .2em;
+}
+
+@media (max-width: $smartphone) {
+  .header__left {
+    flex: 1 0 100%;
+  }
+  .header__scrollbar {
+    flex: 1 0 auto;
+    width: auto;
+  }
+}

@@ -1,0 +1,49 @@
+{% macro block(data) %}
+
+<section id="our-codex" class="section-default">
+    <div class="article-default --p-two-columns" scroll-item data-mod-section="0" data-mod-bg="--bg-black">
+        <h3 class="title">{{ data.content_1.title | safe }}</h3>
+        {{ data.content_1.text_1 | safe }}
+        {{ data.content_1.text_1 | safe }}
+    </div>
+
+    <div class="block-image --small --hide" scroll-item data-class="image-3D">
+        {% img data.image_1 %}
+    </div>
+
+    <div class="section-default --sub --two-columns"  scroll-item>
+        <div class="article-default">
+            <h3 class="title">{{ data.content_2.title | safe }}</h3>
+            {{ data.content_2.text | safe }}
+        </div>
+
+        <div class="article-default" data-scroll-insider data-speed=".3" data-avoid-mobile>
+            <h3 class="title">{{ data.content_3.title | safe }}</h3>
+            {{ data.content_3.text | safe }}
+        </div>
+    </div>
+
+    <div class="block-image --xlarge --frames" scroll-item>
+        <ul>
+            <li>
+                {% img data.image_2 %}
+            </li><!-- 'data-scroll-scale data-avoid-mobile' -->
+            <li data-scroll-insider data-speed=".1" data-avoid-mobile>
+                {% img data.image_3 %}
+            </li><!-- 'data-scroll-scale data-avoid-mobile' -->
+        </ul>
+    </div>
+</section>
+
+<blockquote class="blockquote-estrobo" scroll-item data-class="blockuote-estrobo" data-mod-bg="--bg-black">
+    <div class="holder-content">
+        <div class="content">
+            {% for item in data.quote %}
+                <span class="__t">{{ item.text | safe }}</span>
+                <div></div>
+            {% endfor %}
+        </div>
+    </div>
+</blockquote>
+
+{% endmacro %}

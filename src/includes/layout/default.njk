@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% set lang = renderData.language if renderData.language else locales.default %}
+<html class="{{ htmlClass }}" lang="{{ lang }}">
+{# HEAD #}
+{% include "layout/_head.njk" %}
+
+{# BODY #}
+{% if build.isDev %}{% set bodyClass = "__presentation" + " __debug" %}{% endif %}
+
+<body class="{{ bodyClass }}">
+{# HEADER #}
+{% include "layout/header.njk" %}
+
+{# MAIN #}
+<main id='Main'>
+  <div class='wrap'>
+    {{ content | safe }}
+    {# FOOTER #}
+    {% include "layout/footer.njk" %}
+  </div>
+</main>
+
+{# WINS #}
+{% include "layout/windows.njk" %}
+{% include "layout/sidemenu.njk" %}
+{% include "layout/loader.njk" %}
+{% include "layout/interface.njk" %}
+
+<script async defer src="/assets/preload.js"></script>
+</body>
+</html>

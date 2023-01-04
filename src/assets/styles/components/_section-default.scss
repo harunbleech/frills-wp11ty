@@ -1,0 +1,46 @@
+.section-default {
+  position: relative;
+  margin: var(--padding-l) 0;
+
+  &[data-mod-bg="--bg-orange"] {
+    //color: var(--black);
+    --color-deco: var(--black);
+  }
+  &[data-mod-bg="--bg-black"] {
+    //color: var(--frills-orange);
+    --color-deco: var(--frills-orange);
+  }
+
+  &.--two-columns {
+    display: grid;
+    grid-column-gap: var(--padding-s);
+    grid-row-gap: 0;
+
+    grid-template: auto / 1fr 1fr;
+
+    padding: 0 var(--padding-xl) 0;
+
+    > .article-default {
+      padding: 0;
+    }
+  }
+}
+
+
+@media (max-width: $smartphone) {
+  .section-default {
+    display: block !important;
+
+    &.--two-columns {
+      padding: 0 var(--padding-m)
+    }
+
+    p {
+      margin: 1em 0 !important;
+    }
+
+
+
+
+  }
+}

@@ -1,0 +1,15 @@
+{% macro block(data) %}
+{% set aspect = data.image.sizes["@1x-height"]/data.image.sizes["@1x-width"] %}
+<figure class="media-holder" style="--aspect-ratio: {{ aspect }}" scroll-item>
+  <img data-item-load
+       alt="{{ data.image.title }}"
+       src="/assets/images/blank.png"
+       data-src="
+            {{ data.image.sizes["@1x"] }},
+            {{ data.image.sizes["@2x"] }},
+            {{ data.image.sizes["@3x"] }},
+            {{ data.image.sizes["@4x"] }}"
+       width="{{ data.image.sizes["@1x-width"] }}"
+       height="{{ data.image.sizes["@1x-height"] }}">
+</figure>
+{% endmacro %}

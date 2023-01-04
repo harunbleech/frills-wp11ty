@@ -1,0 +1,41 @@
+{% macro block(data) %}
+
+<section id="artists-list" class="section-artists" scroll-item>
+    <h1>Artists</h1>
+    <ul>
+        {% for item in all[renderData.language].artists %}
+            <li data-acordion>
+                <a href='{{ item.link }}' data-acordion-toogle data-internal>
+                    <span>{{ item.title.rendered | safe }}</span>
+                </a>
+
+                <section class="section-artist-detail --version-ul" data-acordion-group>
+                    <div class="info">
+                    <div class="links">
+                        {%  if item.acf.press_kit %}
+                            <a id="PressKit" href='{{ item.acf.press_kit }}' target='_blank' rel='noreferrer'>PRESS KIT</a>
+                        {% endif %}
+                        {%  if item.acf.book_artist %}
+                            <a class="putoLink" id="BookArtist" href='{{ item.acf.book_artist }}' target="_blank">BOOK ARTIST</a>
+                            <button class="putoBoton __putoBotonBooking" data-internal data-src="{{ item.acf.book_artist }}">BOOK ARTIST</button>
+                        {% endif %}
+                    </div>
+                    {{ item.acf.bio | safe }}
+                    </div>
+                    <div class="info-aux">
+                    <div class="rrss">
+                        {% for item in item.acf.rrss %}
+                        <a class='' href='{{ item.url }}' target='_blank' rel='noreferrer'>{{ item.name | safe }}</a>
+                        {% endfor %}
+                    </div>
+                    <div class="image">
+                        {% img item.acf.image %}
+                    </div>
+                    </div>
+                </section>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+{% endmacro %}

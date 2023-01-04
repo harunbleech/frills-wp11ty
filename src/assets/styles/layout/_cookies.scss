@@ -1,0 +1,72 @@
+.ec-holder {
+  font-family: var(--font-sans);
+  background-color: var(--black) !important;
+  color: var(--white);
+}
+
+.ec-holder__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 100% !important;
+}
+.ec-holder__heading {
+  display: inline-block;
+  flex: 1 0 auto;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: right;
+  margin: 0 1em 0 0 !important;
+  font-size: var(--font-size-small) !important;
+}
+.ec-holder__text {
+  display: inline-block;
+  flex: 1 0 auto;
+  font-size: var(--font-size-small) !important;
+}
+.ec-more-info {
+  width: 100%;
+}
+
+.ec-holder__buttons {
+  margin: 0 !important;
+}
+
+.ec-holder .ec-cookie-tabs__content,
+.ec-cookie-tabs > .ec-cookie-tabs__item label,
+.ec-cookie-tabs__table table th, .ec-cookie-tabs__table table tr, .ec-cookie-tabs__table table td,
+.ec-holder .ec-cookie-tabs__table {
+  background-color: var(--black) !important;
+  color: var(--white) !important;
+  border: 0 !important;
+}
+
+#ecShowMore,
+#ecSubmitButton {
+  text-transform: uppercase;
+  color: var(--white) !important;
+  font-weight: 700;
+  border: 2px solid var(--white);
+  text-decoration: none;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 5px 13px;
+  line-height: 1.2;
+}
+
+#ecSubmitButton {
+  border-color: var(--frills-orange);
+  background: var(--frills-orange) !important;
+}
+
+@media (max-width: $smartphone) {
+  .ec-holder__container {
+    display: block;
+    text-align: left;
+  }
+
+  .ec-holder__buttons {
+    margin-top: 25px !important;
+  }
+}

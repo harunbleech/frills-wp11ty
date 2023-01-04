@@ -1,0 +1,101 @@
+<html><head>
+    <!-- Meta tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>Legal Notice</title>
+
+    <!-- Opciones Movil -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="preload" href="/assets/fonts/montserrat-v15-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/montserrat-v15-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/montserrat-v15-latin-700.woff" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" type="text/css" href="/assets/fonts/fonts.css">
+
+    <style>
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            text-align: left;
+            margin: 0;
+            font-size: 20px;
+            width: 100%;
+            font-family: 'Montserrat';
+        }
+
+        .container-mid-padding {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            padding: 100px 40px;
+            margin: 0 auto;
+        }
+
+        .mainTitle {
+            font-family: 'Montserrat';
+            font-weight: 700;
+            text-align: center;
+            margin: 0 auto 50px;
+            font-size: 50px;
+        }
+
+        h2 {
+            font-family: 'Montserrat';
+            font-weight: 700;
+            text-align: left;
+            color: #fff;
+            margin: 0 auto 50px;
+            font-size: 24px;
+            margin-bottom: 0;
+            margin: 40px 0 20px;
+        }
+
+        p {
+            font-family: 'Montserrat';
+            font-weight: 400;
+            color: #fff;
+            line-height: 1.4;
+
+            text-align: left;
+        }
+
+        b {
+            font-weight: 700;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .content ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+            }
+            .mainTitle {
+                font-size: 32px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+  {{ content | safe }}
+</body>

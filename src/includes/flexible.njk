@@ -1,0 +1,26 @@
+{% import "blocks/block_text.njk" as block_text with context %}
+{% import "blocks/block_intro.njk" as block_intro with context %}
+{% import "blocks/block_our_codex.njk" as block_our_codex with context %}
+{% import "blocks/block_what_is.njk" as block_what_is with context %}
+{% import "blocks/block_our_services.njk" as block_our_services with context %}
+{% import "blocks/block_our_principles.njk" as block_our_principles with context %}
+{% import "blocks/block_our_crew.njk" as block_our_crew with context %}
+{% import "blocks/widget_artists.njk" as widget_artists with context %}
+
+{% set blocks = {
+        "block_text": block_text,
+        "block_intro": block_intro,
+        "block_our_codex": block_our_codex,
+        "block_what_is": block_what_is,
+        "block_our_services": block_our_services,
+        "block_our_principles": block_our_principles,
+        "block_our_crew": block_our_crew,
+        "widget_artists": widget_artists
+    }
+%}
+
+{% macro flexible(content) %}
+	{% for item in content %}
+        {{ blocks[item.acf_fc_layout].block(item) }}
+	{% endfor %}
+{% endmacro %}

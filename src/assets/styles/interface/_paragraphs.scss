@@ -1,0 +1,42 @@
+@mixin --default-sans {
+  @include font-p();
+  line-height: var(--line-height-base);
+
+  a {
+    color: inherit;
+    @include basic-a();
+
+    &[target=_self]:after {
+      content: "↘";
+    }
+
+    &[target=_blank]:not(.--cuchillo):after {
+      content: "↗";
+    }
+  }
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  b {
+    font-weight: 700;
+  }
+
+  strong {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+@mixin p--default {
+  @include --default-sans();
+}
+
+@mixin P--legal {
+  @include --default-sans();
+
+}

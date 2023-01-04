@@ -1,0 +1,148 @@
+.section-artist-detail {
+  position: relative;
+  
+  margin: var(--header-top) 0 var(--padding-xl) 0;
+  padding: 0 var(--padding-m);
+  
+  display: flex;
+  flex-wrap: wrap;
+
+  &.--version-ul {
+    margin: 0;
+    padding: var(--padding-xs) 0 0;
+  }
+}
+
+.section-artist-detail h1 {
+  @include font-titular();
+  width: 100%;
+  margin: 0 0 .4em 0; 
+  border-top: 4px solid var(--frills-orange);
+  padding: .1em 0 0;
+  color: var(--white);
+}
+
+.section-artist-detail > .info {
+  @include font-p();
+  width: 40%;
+  padding-right: var(--padding-s);
+}
+
+.section-artist-detail > .info > .links {
+  width: 100%;
+  display: flex;
+
+  button, a {
+    @include basic-a();
+    flex: 0 0 auto;
+    line-height: 1;
+    border: 1px solid var(--frills-orange);
+    padding: .1em .2em;
+    margin-right: .2em;
+    color: var(--frills-orange);
+    background: transparent;
+
+    &:hover {
+      background-color: var(--frills-orange);
+      color: black;
+    }
+  }
+
+  .putoLink {
+    display: none;
+  }
+
+  @media (max-width: $smartphone) {
+    .putoBoton {
+      display: none;
+    }
+    .putoLink {
+      display: inline-block;
+    }
+  }
+}
+
+.section-artist-detail > .info-aux {
+  @include font-p();
+  width: 60%;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: flex-end;
+}
+
+.section-artist-detail > .info-aux > .rrss {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: var(--padding-s);
+
+  a {
+    @include basic-a();
+    color: var(--frills-orange);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.section-artist-detail > .info-aux > .image {
+  position: relative;
+  flex: 1 0 auto;
+
+  .media-holder {
+    padding-top: calc(var(--aspect) * 100%);
+  }
+
+  .form {
+    top:0;
+    left:0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.section-artist-detail  .artists-link {
+  //display: none;
+  position: relative;
+  display: block;
+  @include basic-a();
+
+  background-color: var(--color-aux);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+
+  font-family: var(--font-sans);
+  font-weight: 800;
+  line-height: 1;
+  font-size: var(--font-size-base);
+
+
+  text-transform: uppercase;
+
+  padding: .1em .2em;
+  margin-bottom: var(--padding-l);
+}
+
+@media (max-width: $smartphone) {
+
+  .section-artist-detail {
+    
+    &.--version-ul {
+      margin: 0;
+      padding: var(--padding-m) 0;
+    }
+  }
+
+  .section-artist-detail > .info {
+    width: 100%;
+  }
+
+  .section-artist-detail > .info-aux {
+    width: 100%;
+  }
+}

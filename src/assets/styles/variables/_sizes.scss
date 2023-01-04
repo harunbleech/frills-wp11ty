@@ -1,0 +1,26 @@
+:root {
+  --section-actual:0;
+
+  --padding-xl: #{(180px / 16px) * 1rem};
+  --padding-l: #{(90px / 16px) * 1rem};
+  --padding-m: #{(60px / 16px) * 1rem};
+  --padding-s: #{(30px / 16px) * 1rem};
+  --padding-xs: #{(15px / 16px) * 1rem};
+
+  --stroke: #{(6px / 16px) * 1rem};
+
+  --header-top: clamp(var(--padding-s), 30px, var(--padding-s));
+  --header-button-size: #{(30px / 16px) * 1rem};
+  --sidemenu-width: #{(300px / 16px) * 1rem};
+}
+
+@media (max-width: $smartphone) {
+  :root {
+    --padding-m: 20px;
+    --padding-s: 10px;
+    --padding-xs: 5px;
+    --stroke: 2px;
+    --header-top: var(--padding-m);
+    --sidemenu-width: calc(100% - var(--padding-m) - var(--header-button-size) - var(--padding-s)  - var(--padding-s) - var(--padding-s));
+  }
+}

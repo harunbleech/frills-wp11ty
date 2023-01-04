@@ -1,0 +1,132 @@
+.header__right {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+ // display: none;
+
+  pointer-events: all;
+}
+
+.sidemenu__social .social-link,
+.header__right .social-link {
+
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  line-height: 1;
+  color: currentColor;
+  text-decoration: none;
+  margin: 0 1em;
+}
+
+.sidemenu__social .newsletter-link,
+.header__right  .newsletter-link {
+  //display: none;
+  position: relative;
+  display: block;
+  @include basic-a();
+
+  background-color: var(--color-primary);
+  color: var(--color-aux);
+  border: 1px solid var(--color-primary);
+
+  font-family: var(--font-sans);
+  font-weight: 800;
+  line-height: 1;
+  font-size: var(--font-size-base);
+
+
+  text-transform: uppercase;
+
+  padding: .1em .2em;
+  margin-left: 1.2em;
+
+  svg {
+    top:0;
+    position: absolute;
+    height: 100%;
+    width: auto;
+    fill: var(--color-primary);
+    transform: translate3d(-125%,0,0);
+  }
+}
+
+.header__left .artists-link,
+.header__right  .artists-link {
+  //display: none;
+  position: relative;
+  display: block;
+  @include basic-a();
+
+  background-color: var(--color-aux);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+
+  font-family: var(--font-sans);
+  font-weight: 800;
+  line-height: 1;
+  font-size: var(--font-size-base);
+
+
+  text-transform: uppercase;
+
+  padding: .1em .2em;
+  margin-left: .3em;
+
+  &.--invert {
+    background-color: var(--color-primary);
+    color: var(--color-aux);
+  }
+}
+
+.header__right {
+  .--mobile {
+    display: none;
+  }
+  .--desktop {
+    display: block;
+  }
+}
+
+@media (max-width: $smartphone) {
+  .header__right {
+    .--mobile {
+      display: block;
+    }
+    .--desktop {
+      display: none;
+    }
+  }
+
+  .header__right {
+    width: 100%;
+    pointer-events: none;
+
+    .--show-artists {
+      pointer-events: all;
+    }
+  }
+  .header__right .--hide-artists {
+    display: none;
+  }
+
+  .__artists-list .header__left {
+    display: none;
+  }
+}
+
+
+
+.__artists-list .--hide-artists {
+  display: none;
+}
+
+.--show-artists {
+  display: none;
+}
+.__artists-list .--show-artists {
+  display: block;
+}

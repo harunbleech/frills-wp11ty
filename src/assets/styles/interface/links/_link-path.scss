@@ -1,0 +1,61 @@
+%link-path {
+  @include basic-a();
+  position: relative;
+  display: inline-block;
+
+  svg {
+    position: absolute;
+    stroke-width: 8px;
+    width: 100%;
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  &.--circle-h {
+    svg {
+      top:50%;
+      left:50%;
+      transform: translate3d(-50%,-50%,1px);
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &.--circle-v {
+    svg {
+      top:50%;
+      left:50%;
+      transform: translate3d(-50%,-50%,1px);
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  &.--underline {
+    svg {
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &.__active,
+  &.__linkActive {
+    pointer-events: none;
+  }
+}
+
+
+@mixin link-path($color:$black, $barColor:$white) {
+  @extend %link-path;
+  color: $color;
+  svg {
+    stroke: $barColor;
+  }
+}
+
+.link-path {
+  @extend %link-path;
+}

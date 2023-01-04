@@ -1,0 +1,52 @@
+---
+renderData:
+  language: "{{ data.language }}"
+  title: "{{ data.acf.seo.title }}"
+  description: "{{ data.acf.seo.description }}"
+  image: "{{ data.acf.seo.image.sizes.facebook }}"
+  image_twitter: "{{ data.acf.seo.image.sizes.twitter }}"
+pagination:
+  data: artists
+  size: 1
+  alias: data
+permalink: "{{ data.link }}"
+layout: layout/default
+---
+
+{% set __page = data.acf.options.page or 'default' %}
+{% set __palette = data.acf.options.palette or 'primary' %}
+
+<article id="PageMain" class='default' data-page='artists' data-palette='{{ __palette }}'>
+  <section class="section-artist-detail" scroll-item>
+    <a class="artists-link" href="/artists">
+        <div class="text">
+            Back to artists
+        </div>
+    </a>
+
+    <h1>
+      {{ data.title.rendered | safe }}
+    </h1>
+    <div class="info">
+      <div class="links">
+        <a id="PressKit" href='{{ data.acf.press_kit }}' target='_blank' rel='noreferrer'>PRESS KIT</a>
+
+        {%  if data.acf.book_artist %}
+          <a class="putoLink" id="BookArtist" href='{{ data.acf.book_artist }}' target="_blank">BOOK ARTIST</a>
+          <button class="putoBoton __putoBotonBooking" data-internal data-src="{{ data.acf.book_artist }}">BOOK ARTIST</button>
+        {% endif %}
+      </div>
+      {{ data.acf.bio | safe }}
+    </div>
+    <div class="info-aux">
+      <div class="rrss">
+        {% for item in data.acf.rrss %}
+          <a class='' href='{{ item.url }}' target='_blank' rel='noreferrer'>{{ item.name | safe }}</a>
+        {% endfor %}
+      </div>
+      <div class="image">
+        {% img data.acf.image %}
+      </div>
+    </div>
+  </section>
+</article>

@@ -1,0 +1,22 @@
+---
+renderData:
+  h1: "{{ data.title.rendered | safe }}"
+  language: "{{ data.language }}"
+  title: "{{ data.title.rendered }}"
+  robots: "noindex,follow"
+pagination:
+  data: pages_legales
+  size: 1
+  alias: data
+permalink: "{{ data.link }}"
+layout: layout/default-legal
+---
+
+<div class="container-mid-padding">
+    <h1 class="mainTitle">
+    {{data.title.rendered | safe}}
+    </h1>
+    <div class="content">
+    {{data.content.rendered | safe}}
+    </div>
+</div>

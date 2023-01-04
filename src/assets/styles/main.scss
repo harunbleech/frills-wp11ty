@@ -1,0 +1,57 @@
+//sass --watch app/resources/scss/main.scss:public/resources/css/main.min.css
+//sass --watch app/resources/scss/main.scss:public/resources/css/main.min.css  --style compressed
+
+@import "utils/mixins/breakpoints";
+
+@import "variables/colors";
+@import "variables/paths";
+@import "variables/fonts";
+@import "variables/z-index";
+@import "variables/ease";
+@import "variables/sizes";
+
+@import "utils/normalize";
+@import "utils/normalize_cuchillo";
+@import "utils/utils";
+@import "utils/jstags";
+@import "utils/marquee";
+@import "utils/animation/basic";
+@import "utils/acordion";
+
+@import "utils/scroll";
+
+@import "general";
+@import "default";
+
+@import "interface/titles";
+@import "interface/paragraphs";
+@import "interface/links/links";
+
+@import "layout/wrap";
+@import "layout/page";
+@import "layout/header";
+@import "layout/header__left";
+@import "layout/header__right";
+@import "layout/sidemenu";
+@import "layout/cookies";
+@import "layout/footer";
+@import "layout/preloader";
+@import "layout/cursor";
+@import "layout/cookies";
+@import "layout/interface";
+
+@import "windows/message";
+
+@import "components/carrusel-text";
+@import "components/article-default";
+@import "components/section-default";
+@import "components/block-image";
+@import "components/block-slider-video";
+
+@import "components/section-intro";
+@import "components/section-artists";
+@import "components/section-artist-detail";
+@import "components/section-intro-video";
+@import "components/section-team";
+@import "components/section-newsletter";
+@import "components/blockquote-estrobo";

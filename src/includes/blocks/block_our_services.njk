@@ -1,0 +1,51 @@
+{% macro block(data) %}
+
+<section id="our-services" class="section-default">
+    <div class="article-default --title-p-two-columns" scroll-item data-mod-section="2" data-mod-bg="--bg-orange">
+        <h3 class="title">{{ data.content_1.title | safe }}</h3>
+        {{ data.content_1.text | safe }}
+    </div>
+
+    <div class="article-default --services --title-p-two-columns" scroll-item data-mod-section="2" data-mod-bg="--bg-orange" data-class="services">
+        <div class="article-default__vinyl" data-scroll-sticky data-avoid-mobile="">
+            <div class="vinyl-holder">
+                <div class="vinyl">
+                    <figure class="__vinyl">
+                        <img class="__vinylImage"
+                             data-item-load
+                             width="1120"
+                             height="1120"
+                             data-src="./assets/images/vinilo-frills.png"
+                             data-maxratio="1"
+                             src="./assets/images/blank.png"/>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        {% for item in data.services %}
+            <div class="services-li">
+                {% img item.image %}
+                {{ item.text | safe }}
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<blockquote class="blockquote-estrobo --vertical-ref --with-images" scroll-item data-class="blockuote-images" data-mod-bg="--bg-orange">
+    <ul class="blockquote-estrobo__images-holder __ul">
+        {% for item in data.images %}
+            <li>{% img item.image %}</li>
+        {% endfor %}
+    </ul>
+
+    <div class="holder-content" data-scroll-sticky data-slomo=".98">
+        <div class="content">
+            {% for item in data.quote %}
+                <span class="__t">{{ item.text | safe }}</span>
+            {% endfor %}
+        </div>
+    </div>
+</blockquote>
+
+{% endmacro %}

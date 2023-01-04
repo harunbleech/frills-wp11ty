@@ -1,0 +1,20 @@
+#Preloader {
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background: var(--black);
+
+  @include z-index($z-index-loader);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: rem(100px);
+    height: auto;
+    fill: var(--frills-orange);
+  }
+}

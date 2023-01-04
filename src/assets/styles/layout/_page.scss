@@ -1,0 +1,50 @@
+.page {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.page > .info {
+  position: relative;
+
+  padding: 0 var(--padding-general);
+}
+
+.page > .info > ul,
+.page > .info > ol,
+.page > .info > p {
+  position: relative;
+  color: var(--positive);
+  margin: .6em 0;
+
+  &:first-child {
+    margin-top: 0;
+    padding-top: .6em;
+  }
+
+  &:last-child {
+    padding-bottom: .6em;
+  }
+}
+
+.page > .info.--legal > ul,
+.page > .info.--legal > ol,
+.page > .info.--legal > p {
+  font-size: 32px;
+}
+
+.page > .info .info__deco {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+
+  padding: 0 var(--padding-general);
+
+  > div {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+  }
+}

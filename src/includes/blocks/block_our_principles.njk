@@ -1,0 +1,37 @@
+{% macro block(data) %}
+
+<section id="our-principles" class="section-default block-slider-video" scroll-item data-class="slider-video" style="margin: 0" data-mod-bg="--bg-black" data-mod-section="3" data-offset-anchor="-100vh">
+    <div class="block-slider-video__slider __slider" data-scroll-sticky data-avoid-mobile>
+        <ul class="__slides">
+            {% for item in data.principles %}
+                <li>
+                    <figure class="__video">
+                        <video width="1920"
+                               height="1080"
+                               preload="none"
+                               playsinline
+                               webkit-playsinline
+                               muted
+                               loop
+                               src="{{ item.video | safe }}"></video>
+                    </figure>
+
+                    <h3 class="__t">
+                        <span>{{ item.title_line_1 | safe }}</span>
+                        <span>{{ item.title_line_2 | safe }}</span>
+                    </h3>
+                    <p class="__t">
+                        {{ item.text | safe }}
+                    </p>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <div class="controls __controls">
+            <button class="__prev">PREV</button>
+            <button class="__next">NEXT</button>
+        </div>
+    </div>
+</section>
+
+{% endmacro %}

@@ -1,0 +1,31 @@
+{% macro block(data) %}
+
+<section id="our-team" class="section-team" scroll-item data-class="slider-team" data-mod-section="4" data-mod-bg="--bg-black">
+    <h2 class="title">
+        <span>This is</span>
+        <span>the frills</span>
+        <span>crew</span>
+    </h2>
+    <p class="summary">
+        A group of like-minded, passionate experts and specialists with a multi-faceted background and a lot of experience. We have dedicated our lives to electronic music, and most importantly, we are real ravers at heart.
+    </p>
+
+    <ul>
+        {% for item in data.Crew %}
+            <li>
+                <div class='crew-holder'>
+                    <div class="figure-holder">
+                        {% img item.image_1 %}
+                        {% img item.image_2 %}
+                    </div>
+                    <figcaption>
+                        {{ item.name | safe }}
+                        <div class="role">({{ item.role | safe }})</div>
+                    </figcaption>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+{% endmacro %}

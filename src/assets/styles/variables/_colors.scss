@@ -1,0 +1,48 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --frills-orange: #fa5117;
+
+  --bg-primary: var(--black);
+  --color-primary: var(--frills-orange);
+
+  --bg-secondary: var(--frills-orange);
+  --color-secondary: var(--black);
+
+  --assertive: #fa5117;
+  --positive: #2929FF;
+  --grey: #878787;
+
+  --error: #FF3333;
+  --success: #0CE80C;
+}
+
+.palette-secondary {
+  --primary: var(--main-secondary);
+  --secondary: var(--main-primary);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: var(--main-secondary);
+    --secondary: var(--main-primary);
+  }
+}
+
+$white: var(--white);
+$black: var(--black);
+$dark: var(--dark);
+$light: var(--light);
+$primary: var(--primary);
+$secondary: var(--secondary);
+$assertive: var(--assertive);
+$grey: var(--grey);
+$focus: var(--focus);
+$transparent: transparent;
+
+$facebook: #3b5998;
+$twitter: #55acee;
+$youtube: #ff0000;
+$linkedin: #007bb5;
+$whatsapp: #4dc247;
+$pinterest: #cb2027;

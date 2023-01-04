@@ -1,0 +1,42 @@
+{% macro block(data) %}
+
+<section id="what-is-frills" class="section-default">
+    <div class="section-default --sub --two-columns"  scroll-item data-mod-section="1" data-mod-bg="--bg-orange">
+        <div class="article-default">
+            <h3 class="title">{{ data.content_1.title | safe }}</h3>
+            {{ data.content_1.text | safe }}
+        </div>
+
+        <div class="article-default" data-scroll-insider data-speed=".3" data-avoid-mobile>
+            <h3 class="title">
+            <span class="deco" data-scroll-slowly data-alpha-max=".4"  data-avoid-mobile>
+                {{ data.content_2.title | safe }}
+            </span>
+                {{ data.content_2.title | safe }}
+            </h3>
+            {{ data.content_2.text | safe }}
+        </div>
+    </div>
+
+    <div class="block-image --xlarge --hide" scroll-item data-class="image-3D">
+        {% img data.image_1 %}
+    </div>
+
+    <div class="article-default --p-two-columns" scroll-item data-mod-bg="--bg-orange">
+        <h3 class="title">{{ data.content_3.title | safe }}</h3>
+        <div>{{ data.content_3.text_1 | safe }}</div>
+        {{ data.content_3.text_2 | safe }}
+    </div>
+</section>
+
+<blockquote class="blockquote-estrobo" scroll-item data-class="blockuote-estrobo" data-mod-bg="--bg-black">
+    <div class="holder-content">
+        <div class="content">
+            {% for item in data.quote %}
+                <span class="__t">{{ item.text | safe }}</span>
+            {% endfor %}
+        </div>
+    </div>
+</blockquote>
+
+{% endmacro %}

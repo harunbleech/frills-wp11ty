@@ -1,0 +1,56 @@
+@keyframes example {
+  0%   {color: var(--frills-orange)}
+  10%  {color: var(--black)}
+  20%  {color: var(--frills-orange)}
+  30% {color: var(--black)}
+  40%   {color: var(--frills-orange)}
+  50%  {color: var(--white)}
+  60%  {color: var(--frills-orange)}
+  70% {color: var(--white)}
+  80%  {color: var(--frills-orange)}
+  90%  {color: var(--white)}
+}
+
+.section-artists {
+  position: relative;
+  
+  margin: var(--padding-xl) 0;
+  padding: 0 var(--padding-m);
+
+  @include font-titular();
+}
+
+.section-artists h1 {
+  @include font-titular-xlarge;
+  color: white;
+  margin: 0; 
+}
+
+.section-artists ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: var(--padding-m) 0 var(--padding-m);
+}
+
+.section-artists > ul > li > a {
+  display: block;
+  color: var(--frills-orange);
+  text-decoration: none;
+  padding: .2em 0 .3em;
+  border-bottom: 4px solid var(--frills-orange);
+
+  &:hover {
+    animation-name: example;
+    animation-duration: .3s;
+    color: var(--white);
+  }
+}
+
+@media (max-width: $smartphone) {
+  .section-artists {
+    margin: var(--padding-l) 0;
+  }
+}
+

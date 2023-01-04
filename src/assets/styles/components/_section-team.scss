@@ -1,0 +1,146 @@
+.section-team {
+  position: relative;
+  
+  --n-columns:4;
+
+  margin: var(--padding-xl) 0;
+  padding: 0 var(--padding-m);
+
+  display: grid;
+  grid-template: auto / 1fr 1fr;
+  grid-column-gap: var(--padding-xs);
+  grid-row-gap: var(--padding-m);
+}
+
+.section-team > .title {
+  @include font-titular();
+  color: var(--white);
+
+  margin: 0;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+
+  span {
+    display: block;
+  }
+}
+
+.section-team > .summary {
+  @include p--default();
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  color: var(--frills-orange);
+  text-align: right;
+}
+
+.section-team > ul {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  grid-template: auto / repeat(var(--n-columns), 1fr);
+  grid-column-gap: var(--padding-xl);
+  grid-row-gap: var(--padding-m);
+  width: auto;
+
+  li {
+    padding: 0;
+  }
+
+  .crew-holder {
+    position: relative;
+  }
+
+  .figure-holder {
+    position: relative;
+    width: 100%;
+    @include aspect-ratio-obj(1,1);
+
+    &:hover {
+      figure:nth-of-type(2) {
+        opacity: 1;
+      }
+    }
+
+    > figure {
+      position: absolute;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+
+      &:nth-of-type(2) {
+        opacity: 0;
+      }
+    }
+
+    img {
+      position: absolute;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  figcaption {
+    position: relative;
+    width: 100%;
+    margin-top: .8em;
+    padding: 0 .3em;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: #{(13px / 16px) * 1rem};
+    color: var(--frills-orange);
+
+    .role {
+      font-size: var(--font-size-xsmall);
+    }
+  }
+}
+
+@media (max-width: $tabletLandscape) {
+  .section-team > ul {
+    grid-column-gap: var(--padding-m);
+    grid-row-gap: var(--padding-s);
+  }
+}
+
+@media (max-width: $tabletPortrait) {
+  .section-team {
+    --n-columns: 4;
+  }
+
+  .section-team > ul {
+    grid-column-gap: var(--padding-s);
+    grid-row-gap: var(--padding-s);
+  }
+}
+
+@media (max-width: $smartphone) {
+  .section-team {
+    --n-columns: 2;
+  }
+
+  .section-team > .title {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    text-align: right;
+  }
+
+  .section-team > .summary {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .section-team > ul {
+    grid-row: 3 / 4;
+    grid-column-gap: var(--padding-xs);
+    grid-row-gap: var(--padding-s);
+  }
+}

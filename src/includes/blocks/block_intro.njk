@@ -1,0 +1,37 @@
+{% macro block(data) %}
+
+<section id="frills" class="section-intro" scroll-item data-class="intro" data-mod-bg="--bg-black">
+    <h2 class="title-estrobo">
+        <div class="__h1">
+            <span class="section-intro__phrase">{{ data.loder_line_1 }}</span>
+        </div>
+
+        <div class="__h2">
+            <span class="section-intro__phrase">{{ data.loader_line_2 }}</span>
+        </div>
+    </h2>
+
+    <h2 class="title __title">
+        <div class="deco" data-scroll-slowly aria-hidden="true">
+            {% for item in data.headline %}
+            <span class="section-intro__phrase">{{ item.text }}</span>
+            {% endfor %}
+        </div>
+
+        {% for item in data.headline %}
+            <span class="section-intro__phrase __t">{{ item.text }}</span>
+        {% endfor %}
+    </h2>
+</section>
+
+<section class="section-intro-video" scroll-item data-class="intro-video" data-mod-bg="--bg-black">
+    <div class="title-holder" data-scroll-sticky>
+        <h2 class="title __title">
+            {% for item in data.video_text %}
+                <span>{{ item.text }}</span>
+            {% endfor %}
+        </h2>
+    </div>
+</section>
+
+{% endmacro %}
